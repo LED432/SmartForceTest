@@ -1,0 +1,5 @@
+//создание образа программы
+docker build -t smart .
+
+//запуск с параметром
+docker run --rm -it smart:latest /home/app/dir0 123 new
