@@ -12,7 +12,7 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:11-jre-slim
 COPY --from=build /home/app/target/SmartForceTest-1.0-SNAPSHOT.jar /usr/local/lib/SmartForceTest.jar
 #Копирование каталога для работы
-COPY target/dir0 /home/app
+COPY src/main/resources/dir0 /home/app
 WORKDIR home/app
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/SmartForceTest.jar"]
